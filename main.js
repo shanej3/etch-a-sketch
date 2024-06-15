@@ -1,15 +1,35 @@
 const container = document.querySelector(".container");
+createnewgrid(50);
 /* 16x16 grid */
-for (var i = 1; i <= 16; i++) /* creates each 16 rows */
+
+const main_button = document.querySelector("#button");
+main_button.addEventListener("click", function ()
     {
-        var row = document.createElement("div");
+        size = prompt("Enter a size");
+        createnewgrid(size);
+    }
+)
+
+function createnewgrid(size)
+{
+    container.innerHTML = '';
+    for (var i = 1; i <= size; i++) /* creates # of rows = to size */
+    {
+        const row = document.createElement("div");
         row.classList.add("row");
-        for (var j = 1; j <= 16; j++) /* adds 16 squares to each row */
+        for (var j = 1; j <= size; j++) /* adds 16 squares to each row */
         {
-            var square = document.createElement('div');
+            const square = document.createElement('div');
+            square.addEventListener("mouseover", function ()
+            {
+                square.style.backgroundColor = "black";
+            });
             square.classList.add('square');
             row.appendChild(square);
+            
+            
         }
         container.appendChild(row);
     }
+}
 
