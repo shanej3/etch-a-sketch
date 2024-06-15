@@ -1,0 +1,13 @@
+.square {
+    display : flex;
+    width : 50px;
+    height : 50px;
+    color : black;
+    background-color: white;
+    border : 2px solid;
+    }
+.container
+{
+    display : flex;
+    flex-flow : wrap row;
+}
